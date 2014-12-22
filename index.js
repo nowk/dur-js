@@ -83,7 +83,7 @@ Duration.prototype.minutes = function() {
  */
 
 Duration.prototype.seconds = function() {
-  return Math.floor(fn.seconds.call(this) % 10);
+  return Math.floor(fn.seconds.call(this) % 60);
 };
 
 /*

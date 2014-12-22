@@ -21,4 +21,18 @@ describe("duration", function() {
     assert.equal((((((179 * 24) + 21) * 60) + 4) * 60) + 2, d.inSeconds());
     assert.equal(15541441943, d.inMilliseconds());
   });
+
+  it("FIX returns 59 seconds", function() {
+    {
+      var d = new Duration(59000);
+      assert.equal(0, d.minutes());
+      assert.equal(59, d.seconds());
+    }
+
+    {
+      var d = new Duration(60000);
+      assert.equal(1, d.minutes());
+      assert.equal(0, d.seconds());
+    }
+  });
 });
