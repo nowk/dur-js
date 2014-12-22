@@ -1,5 +1,11 @@
 /* jshint node: true */
 
+/*
+ * expose
+ */
+
+module.exports = exports = Duration;
+
 // time durations
 var nanosecond  = exports.nanosecond  = 1;
 var microsecond = exports.microsecond = 1000 * nanosecond;
@@ -7,13 +13,6 @@ var millisecond = exports.millisecond = 1000 * microsecond;
 var second      = exports.second      = 1000 * millisecond;
 var minute      = exports.minute      = 60 * second;
 var hour        = exports.hour        = 60 * minute;
-
-
-/*
- * expose
- */
-
-module.exports = Duration;
 
 /*
  * Duration
