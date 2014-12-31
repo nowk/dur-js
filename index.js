@@ -43,6 +43,21 @@ var fn = {
 };
 
 /*
+ * decrement decrements the current duration
+ *
+ * @param {Number|Duration} n
+ * @api public
+ */
+
+Duration.prototype.decrement = function(n) {
+  if (n instanceof Duration) {
+    n = n.t;
+  }
+
+  this.t = this.t - n;
+};
+
+/*
  * days returns the *remaining* days
  *
  * @return {Number}

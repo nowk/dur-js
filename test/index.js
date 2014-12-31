@@ -35,4 +35,22 @@ describe("duration", function() {
       assert.equal(0, d.seconds());
     }
   });
+
+  it("decrements the existing duration", function() {
+    var d = new Duration(15465601000);
+    d.decrement(1000);
+    assert.equal(179, d.days());
+    assert.equal(0, d.hours());
+    assert.equal(0, d.minutes());
+    assert.equal(0, d.seconds());
+    assert.equal(0, d.milliseconds());
+
+    var e = new Duration(1000);
+    d.decrement(e);
+    assert.equal(178, d.days());
+    assert.equal(23, d.hours());
+    assert.equal(59, d.minutes());
+    assert.equal(59, d.seconds());
+    assert.equal(0, d.milliseconds());
+  });
 });
